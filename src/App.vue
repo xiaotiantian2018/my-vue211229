@@ -4,50 +4,15 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
-    <img alt="Vue logo" src="@/assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <ul class="bg_brown">
-      <ChildComp
-        v-for="(item, index) in vegitableList"
-        :key="index"
-        :vegiItem="item"
-      ></ChildComp>
-    </ul>
-    <VonComp />
-    <VforComp />
+    <router-view />
   </div>
 </template>
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
-import ChildComp from "@/components/ChildComp.vue";
-import VonComp from "@/components/VonComp.vue";
-import VforComp from "@/components/VforComp.vue";
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-    ChildComp,
-    VonComp,
-    VforComp,
-  },
+  components: {},
   data() {
-    return {
-      vegitableList: [
-        {
-          id: 0,
-          name: "土豆",
-        },
-        {
-          id: 1,
-          name: "西红柿",
-        },
-        {
-          id: 2,
-          name: "黄瓜",
-        },
-      ],
-    };
+    return {};
   },
 };
 </script>
@@ -60,9 +25,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-.bg_brown{
-  background: darkgoldenrod;
 }
 #nav {
   padding: 30px;
