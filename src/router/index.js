@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
+import Bar from '@/views/Bar.vue'
 Vue.use(VueRouter)
 
+// const Bar = { template: '<div>barDDDSDFSAFADSFADSFDASAS</div>' }
 const routes = [
   {
     path: '/',
@@ -17,7 +18,12 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  },
+  {
+    path: '/bar',
+    name: 'Bar',
+    component: Bar
+  },
 ]
 
 const router = new VueRouter({
