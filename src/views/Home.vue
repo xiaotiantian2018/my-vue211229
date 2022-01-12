@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <router-link to="/bar?id=111">跳转到bar页面</router-link>
     <img alt="Vue logo" src="@/assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <ul class="bg_brown">
