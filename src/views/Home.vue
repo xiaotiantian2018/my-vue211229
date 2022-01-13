@@ -1,6 +1,22 @@
 <template>
   <div class="home">
-    <router-link to="/bar?id=111">跳转到bar页面</router-link>
+    <!-- // 后退一步记录，等同于 history.back() -->
+    <!-- $router.go(-1) -->
+    <button @click="$router.go(-1)">后退一步</button>
+    <!-- // 字符串 -->
+    <router-link to="/bar?id=111">声明式，字符串跳转到bar页面</router-link>
+    <!-- 对象 -->
+    <router-link :to="{path:'bar'}">声明式，对象跳转到bar页面</router-link>
+
+    <!-- // 字符串 -->
+    <div><button @click="$router.push( 'bar')">编程式，字符串跳转到bar页面</button></div>
+    <!-- 对象 -->
+    <div><button @click="$router.push( {path:'bar'})">编程式， 对象跳转到bar页面</button></div>
+    <!-- // 命名的路由 -->
+    <div><button @click="$router.push({ name: 'bar', params: { id: '123' }})">编程式，命名的路由，跳转到bar页面</button></div>
+     <!-- 带查询参数，变成 /bar?id=123-->
+    <div><button @click="$router.push({ path: 'bar', query: { id: '123' }})">编程式，带查询参数，变成 /bar?id=123，跳转到bar页面</button></div>
+
     <img alt="Vue logo" src="@/assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <ul class="bg_brown">
