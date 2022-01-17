@@ -2,13 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Bar from '@/views/Bar.vue'
+import Set from '@/views/Set.vue'
+
 Vue.use(VueRouter)
 
 // const Bar = { template: '<div>barDDDSDFSAFADSFADSFDASAS</div>' }
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home
   },
   {
@@ -23,6 +25,11 @@ const routes = [
     path: '/bar',
     name: 'bar',
     component: Bar
+  },
+  {
+    path: '/set',
+    name: 'set',
+    component: Set
   },
 ]
 

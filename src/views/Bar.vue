@@ -4,14 +4,22 @@
     <h2> this.$route.path:{{ path }}</h2>
     <h2> this.$route.params:{{$route.params}}</h2>
     <h2> this.$route.query:{{$route.query}}</h2>
+    <p>{{obj.foo}}</p>
+    <button @click="obj.foo = 'baz'">Change it</button>
   </div>
 </template>
 <script>
+let obj = {
+  foo:'bar'
+}
+// Object.freeze(obj)
 export default {
-  name: "Home",
+  name: "Bar",
 
   data() {
-    return {};
+    return {
+      obj
+    };
   },
   computed: {
     path() {
