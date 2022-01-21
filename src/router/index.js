@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Bar from '@/views/Bar.vue'
 import Set from '@/views/Set.vue'
+import Slot from '@/views/Slot.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/set',
     name: 'set',
     component: Set
+  },
+  {
+    path: '/slot',
+    name: 'slot',
+    component: Slot
   },
 ]
 

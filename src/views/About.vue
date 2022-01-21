@@ -31,9 +31,21 @@ export default {
       ],
     };
   },
+  beforeCreate(){
+    console.log("beforeCreate_about page");
+  },
+  created(){
+    console.log("created_about page");
+    console.log('this',this)
+  },
   mounted() {
     this.items[0] = { message: "first", id: "1" }; //此时对象的值更改了，但是视图没有更新
     this.arrayMsg[1] = { name: "second", id: "5" };
+    // 整个视图都渲染完毕再执行某些操作，可以在 mounted 内部使用 vm.$nextTick
+    this.$nextTick(function(){
+
+      alert('仅在整个视图都被渲染之后才会运行的代码')
+    })
 
   },
   beforeUpdate() {
@@ -41,6 +53,10 @@ export default {
   },
   updated() {
     console.log("updated_about page");
+    this.$nextTick(function () {
+    //  仅在整个视图都被重新渲染之后才会运行的代码  
+    alert('仅在整个视图都被重新渲染之后才会运行的代码')   
+  })
   },
   beforeDestroy() {
     console.log("beforeDestroy");
