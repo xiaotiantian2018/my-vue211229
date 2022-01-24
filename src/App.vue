@@ -8,7 +8,7 @@
       <router-link to="/about"> About</router-link> |
       <router-link to="/bar?id=111"> Bar</router-link> |
       <router-link to="/set"> Set</router-link> |
-      <router-link to="/slot"> Slot</router-link>
+      <router-link to="/slotEg"> slotEg</router-link>
 
     </div>
     <!-- 路由出口 -->
