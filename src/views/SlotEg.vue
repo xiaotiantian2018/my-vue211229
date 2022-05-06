@@ -11,7 +11,19 @@
           中的内容都会被视为默认插槽的内容。
         </p>
       </template>
-      <template v-slot:footer> this is a footer </template>
+      <template v-slot:footer> this is a footer:
+        <br/>
+        <input type="text" value="" v-model="inputedText">
+        {{inputedText}}
+        <br/>
+        <input type="radio" id="one" value="One" v-model="picked">
+        <label for="one">One</label>
+        <br/>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <label for="one">Two</label>
+        <br/>
+        <span>Picked: {{ picked }}</span>
+      </template>
     </BaseLayout>
   </div>
 </template>
@@ -25,7 +37,11 @@ export default {
     BaseLayout,
   },
   data() {
-    return {};
+    return {
+      picked:'',
+      inputedText:''
+
+    };
   },
 };
 </script>

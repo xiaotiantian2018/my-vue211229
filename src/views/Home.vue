@@ -5,9 +5,17 @@
     <button @click="$router.go(-1)">后退一步</button>
     <!-- // 字符串 -->
     <router-link to="/bar?id=111">声明式，字符串跳转到bar页面</router-link>
+    <br/>
     <!-- 对象 -->
     <router-link :to="{path:'bar'}">声明式，对象跳转到bar页面</router-link>
+    <br/>
+    <!-- // 命名的路由 -->
+    <router-link :to="{name:'bar', params:{id:'123'}}">声明式，命名的路由，跳转到bar页面</router-link>
+    <br/>
+    <!-- 带查询参数，变成 /bar?id=123-->
+    <router-link :to="{path:'bar', query:{id:'123'}}">声明式，带查询参数，变成 /bar?id=123，跳转到bar页面</router-link>
 
+    <br/>
     <!-- // 字符串 -->
     <div><button @click="$router.push( 'bar')">编程式，字符串跳转到bar页面</button></div>
     <!-- 对象 -->
