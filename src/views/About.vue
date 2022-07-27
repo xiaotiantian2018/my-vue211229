@@ -3,6 +3,9 @@
     <h1>This is an about page</h1>
     <p v-for="item in items" :key="item.id">{{ item.id }}:{{ item.message }}</p>
     <p v-for="item in arrayMsg" :key="item.id">{{ item.id }}:{{ item.name }}</p>
+  <div style="width:800px;margin:0 auto">
+
+</div>
   </div>
 </template>
 <script>
@@ -28,6 +31,7 @@ export default {
           id: "6",
         },
       ],
+       
     };
   },
   beforeCreate() {

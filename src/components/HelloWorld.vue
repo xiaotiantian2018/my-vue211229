@@ -3,6 +3,7 @@
     <h1>{{ msg }}</h1>
     <p>{{ studentname }}</p>
     <h3>一、class绑定</h3>
+    <div :class="letterList.length>0? 'active':''"> class绑定,绑定字符串</div>
     <div class="static" :class="{ active: isActive, text_danger: hasError }">
       class绑定,绑定的数据对象内联定义在模板里
     </div>
@@ -13,8 +14,10 @@
       渲染的结果和上面一样。我们也可以在这里绑定一个返回对象的计算属性。这是一个常用且强大的模式：
     </h3>
     <div class="static" :class="classObject">class绑定</div>
+     
     <h3>二、style绑定</h3>
     <p :style="styleObj">style绑定</p>
+    <p :style="{color:'blue',fontSize:'14px'}">style绑定test</p>
     <div>
       computed是计算属性，也就是依赖某个值或者props通过计算得来的数据，
       计算属性示例：{{ fullName }}
@@ -105,6 +108,7 @@ export default {
       ],
       awesome: 2,
       loginType: "username",
+    
     };
   },
   computed: {

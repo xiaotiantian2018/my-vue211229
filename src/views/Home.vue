@@ -14,7 +14,6 @@
     <br/>
     <!-- 带查询参数，变成 /bar?id=123-->
     <router-link :to="{path:'bar', query:{id:'123'}}">声明式，带查询参数，变成 /bar?id=123，跳转到bar页面</router-link>
-
     <br/>
     <!-- // 字符串 -->
     <div><button @click="$router.push( 'bar')">编程式，字符串跳转到bar页面</button></div>

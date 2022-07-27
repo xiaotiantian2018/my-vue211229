@@ -9,6 +9,7 @@
       <router-link to="/bar?id=111"> Bar</router-link> |
       <router-link to="/set"> Set</router-link> |
       <router-link to="/slotEg"> slotEg</router-link>
+      <router-link to="/upLoad"> upLoad</router-link>
 
     </div>
     <!-- 路由出口 -->

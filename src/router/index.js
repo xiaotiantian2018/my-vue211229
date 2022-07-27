@@ -4,6 +4,9 @@ import Home from '../views/Home.vue'
 import Bar from '@/views/Bar.vue'
 import Set from '@/views/Set.vue'
 import SlotEg from '@/views/SlotEg.vue'
+import upLoad from '@/views/upLoad.vue'
+
+
 
 Vue.use(VueRouter)
 
@@ -25,7 +28,21 @@ const routes = [
   {
     path: '/bar',
     name: 'bar',
-    component: Bar
+    component: Bar,
+    meta:{ isAuth: false, title:"barbarbar" },
+    beforeEnter: (to, from, next) => {
+      console.log('独享路由守卫',to,from,next)
+      if(to.meta.isAuth){ //判断是否需要鉴权
+        if(localStorage.getItem('school')==='heikeji'){
+          next()
+        }else{
+          alert('独享路由守卫-学校名不对，无权限查看！')
+        }
+      }else{
+        next()
+      }
+    }
+
   },
   {
     path: '/set',
@@ -36,6 +53,11 @@ const routes = [
     path: '/slotEg',
     name: 'slotEg',
     component: SlotEg
+  },
+  {
+    path: '/upLoad',
+    name: 'upLoad',
+    component: upLoad
   },
 ]
 
@@ -51,7 +73,7 @@ router.beforeEach((to,from,next)=>{
 		if(localStorage.getItem('school')==='heikeji'){
 			next()
 		}else{
-			alert('学校名不对，无权限查看！')
+			alert('全局前置路由守卫-学校名不对，无权限查看！')
 		}
 	}else{
 		next()
