@@ -4,7 +4,7 @@
     <p v-for="item in items" :key="item.id">{{ item.id }}:{{ item.message }}</p>
     <p v-for="item in arrayMsg" :key="item.id">{{ item.id }}:{{ item.name }}</p>
   <div style="width:800px;margin:0 auto">
-
+    <div id="line" style="width: 600px;height: 400px;"></div>
 </div>
   </div>
 </template>
@@ -34,6 +34,63 @@ export default {
        
     };
   },
+  methods:{
+//option配置
+   lineEcharts: function() {
+      var myChart = this.$echarts.init(document.getElementById('line'))
+      // 配置图表
+      var option = {
+        title: {
+          text: 'Stacked Line'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        legend: {
+          data: ['Email', 'Union Ads']
+        },
+		//笛卡尔坐标系的底板
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+		//工具框
+        toolbox: {
+          feature: {
+            saveAsImage: {}
+          }
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+	
+          { 	//线一
+            name: 'Email',
+            type: 'line',
+            stack: 'Total',
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+		
+          {    //线二
+            name: 'Union Ads',
+            type: 'line',
+            stack: 'Total',
+            data: [220, 182, 191, 234, 290, 330, 310]
+          }
+        ]
+      }
+      myChart.setOption(option)
+    }
+
+  },
   beforeCreate() {
     console.log("beforeCreate_about page");
   },
@@ -48,6 +105,8 @@ export default {
     this.$nextTick(function () {
       alert("仅在整个视图都被渲染之后才会运行的代码");
     });
+
+    this.lineEcharts();
   },
   beforeUpdate() {
     console.log("beforeUpdate_about page");
