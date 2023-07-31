@@ -10,6 +10,7 @@
       <router-link to="/set"> Set</router-link> |
       <router-link to="/slotEg"> slotEg</router-link>
       <router-link to="/upLoad"> upLoad</router-link>
+      <router-link to="/parent"> parent</router-link>
 
     </div>
     <!-- 路由出口 -->

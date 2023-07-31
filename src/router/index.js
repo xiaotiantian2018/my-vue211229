@@ -5,8 +5,7 @@ import Bar from '@/views/Bar.vue'
 import Set from '@/views/Set.vue'
 import SlotEg from '@/views/SlotEg.vue'
 import upLoad from '@/views/upLoad.vue'
-
-
+import Parent from '@/views/Parent.vue'
 
 Vue.use(VueRouter)
 
@@ -59,6 +58,12 @@ const routes = [
     name: 'upLoad',
     component: upLoad
   },
+  {
+    path: '/parent',
+    name: 'parent',
+    component: Parent
+  },
+  
 ]
 
 const router = new VueRouter({
